@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.loader-container {
+  background-color: rgba(122, 214, 245, 0.774);
+  width: 100vw;
+  height: 100vh;
+}
+
+.loader-container .loader {
+  height: 130px;
+  width: 130px;
+  border-radius: 50%;
+  border: 3px solid rgba(255, 255, 255, 0.288);
+  border-top-color: rgba(32, 32, 32, 0.87);
+  position: absolute;
+  top: calc(50% - (130px / 2));
+  left: calc(50% - (130px / 2));
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation: spin 1.2s ease infinite;
+          animation: spin 1.2s ease infinite;
+}
+
+@-webkit-keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=main.css.map */

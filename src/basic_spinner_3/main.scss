@@ -1,0 +1,32 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.loader-container{
+    background-color: rgba(233, 35, 233, 0.774);
+    width:100vw;
+    height:100vh;
+
+    .loader{
+        height:130px;
+        width:130px;
+        border-radius:50%;
+        border-top: 3px solid black;
+        position: absolute;
+        top:calc(50% - (130px / 2));
+        left:calc(50% - (130px / 2));
+        transform: translate(-50%, -50%);
+        animation: spin 1s linear infinite;
+    }
+}
+
+@keyframes spin{
+    from{
+        transform: rotate(0deg);
+    }
+
+    to{
+        transform: rotate(360deg);
+    }
+}

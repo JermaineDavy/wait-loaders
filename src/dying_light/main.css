@@ -1,0 +1,147 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.loader-container {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+
+.loader-container .object-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.loader-container .outer-loader-square {
+  position: absolute;
+  top: calc(50% - ($outerSquareSize / 2));
+  left: calc(50% - (1$outerSquareSize / 2));
+  height: 100px;
+  width: 100px;
+  background-color: black;
+  border: 1px solid white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-animation: spin-outer-square 1s ease infinite;
+          animation: spin-outer-square 1s ease infinite;
+}
+
+.loader-container .outer-loader-circle {
+  position: absolute;
+  top: calc(50% - ($outerCircleSize / 2));
+  left: calc(50% - ($outerCircleSize / 2));
+  height: 102px;
+  width: 102px;
+  background-color: black;
+  border-radius: 45px;
+  -webkit-animation: spin-outer-circle 1s ease infinite;
+          animation: spin-outer-circle 1s ease infinite;
+}
+
+.loader-container .inner-loader-object {
+  position: absolute;
+  top: calc(50% - ($innerObjectSize / 2));
+  left: calc(50% - ($innerObjectSize / 2));
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  -webkit-animation: resize-inner-object 1s ease infinite;
+          animation: resize-inner-object 1s ease infinite;
+}
+
+@-webkit-keyframes spin-outer-square {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    width: calc($outerSquareSize + 20px);
+    height: calc($outerSquareSize + 20px);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  100% {
+    width: calc($outerCicleSize + 23px);
+    height: calc($outerCircleSize + 23px);
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+
+@keyframes spin-outer-square {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    width: calc($outerSquareSize + 20px);
+    height: calc($outerSquareSize + 20px);
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  100% {
+    width: calc($outerCicleSize + 23px);
+    height: calc($outerCircleSize + 23px);
+    -webkit-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+  }
+}
+
+@-webkit-keyframes spin-outer-circle {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    width: 125px;
+    height: 125px;
+  }
+  100% {
+    width: 102px;
+    height: 102px;
+  }
+}
+
+@keyframes spin-outer-circle {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  50% {
+    width: 125px;
+    height: 125px;
+  }
+  100% {
+    width: 102px;
+    height: 102px;
+  }
+}
+
+@-webkit-keyframes resize-inner-object {
+  50% {
+    width: 45px;
+    height: 45px;
+  }
+  100% {
+    height: 70px;
+    width: 70px;
+  }
+}
+
+@keyframes resize-inner-object {
+  50% {
+    width: 45px;
+    height: 45px;
+  }
+  100% {
+    height: 70px;
+    width: 70px;
+  }
+}
+/*# sourceMappingURL=main.css.map */

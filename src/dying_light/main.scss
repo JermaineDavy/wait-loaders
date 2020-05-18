@@ -1,0 +1,107 @@
+$innerObjectSize: 70px;
+$outerSquareSize: 100px;
+$outerCircleSize: 102px;
+$backgroundColor: black;
+$objectColor: white;
+$animationTime: 1s;
+
+*{
+    margin:0;
+    padding:0;
+}
+
+.loader-container{
+    background-color: $backgroundColor;
+    width:100vw;
+    height:100vh;
+
+    .object-container{
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);
+
+        
+    }
+
+    .outer-loader-square{
+        position: absolute;
+        top:calc(50% - ($outerSquareSize / 2));
+        left:calc(50% - (1$outerSquareSize / 2));
+        height:$outerSquareSize;
+        width:$outerSquareSize;
+        background-color: $backgroundColor;
+        border: 1px solid $objectColor;
+        display: flex;
+        animation: spin-outer-square $animationTime ease infinite;
+    }
+
+    .outer-loader-circle{
+        position: absolute;
+        top:calc(50% - ($outerCircleSize / 2));
+        left:calc(50% - ($outerCircleSize / 2));
+        height: $outerCircleSize;
+        width: $outerCircleSize;
+        background-color: $backgroundColor;
+        border-radius: 45px;
+        animation: spin-outer-circle $animationTime ease infinite;
+    }
+
+    .inner-loader-object{
+        position: absolute;
+        top:calc(50% - ($innerObjectSize / 2));
+        left:calc(50% - ($innerObjectSize / 2));
+        width: $innerObjectSize;
+        height: $innerObjectSize;
+        background-color: $objectColor;
+        animation: resize-inner-object $animationTime ease infinite;
+    }
+}
+
+@keyframes spin-outer-square{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    50%{
+        width: calc($outerSquareSize + 20px);
+        height: calc($outerSquareSize + 20px);
+        transform: rotate(-45deg);
+    }
+
+    100%{
+        width:calc($outerCicleSize + 23px);
+        height:calc($outerCircleSize + 23px);
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes spin-outer-circle{
+    0%{
+        transform: rotate(0deg);
+    }
+
+    50%{
+        width:125px;
+        height:125px;
+    }
+
+    100%{
+        width:102px;
+        height:102px;
+    }
+}
+
+@keyframes resize-inner-object{
+
+
+    50%{
+        width:45px;
+        height:45px;
+    }
+
+    100%{
+        height: $innerObjectSize;
+        width: $innerObjectSize;
+    }
+}
